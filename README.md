@@ -14,8 +14,23 @@
   3. Examine the Dataset Schema
   4. Examine the Dataset Details
   5. Query the Data
+         SELECT (  fare, trip_miles, trip_seconds
+                ) FROM `bigquery-public-data.chicago_taxi_trips.taxi_trips` 
+        LIMIT 2000
   6. Count Rows where Fare Is Not Null
+        SELECT COUNT(fare) AS count_of_non_null_fares
+        FROM `bigquery-public-data.chicago_taxi_trips.taxi_trips`
+        WHERE fare IS NOT NULL;
   7. Find Correlations between Fare and Other Columns
+        SELECT AVG(fare) AS AVG_FARE
+        FROM `bigquery-public-data.chicago_taxi_trips.taxi_trips` LIMIT 10000
   8. Find Average Fare
+        SELECT 
+        EXTRACT(DAYOFWEEK FROM trip_start_timestamp) AS day_of_week,
+        AVG(fare) AS average_fare
+      FROM `bigquery-public-data.chicago_taxi_trips.taxi_trips`
+      WHERE fare IS NOT NULL
+      GROUP BY day_of_week
+      ORDER BY day_of_week;
 
 
