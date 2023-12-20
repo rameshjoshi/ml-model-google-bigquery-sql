@@ -1,7 +1,7 @@
 # ml-model-google-bigquery-sql
 
 **scenario**
-  Using BigQuery to Explore and Analyze Data
+  Your organization shuttles hundreds of employees to and from the office every day using private taxi services. They'd like to optimize the resources assigned using Machine Learning. Using BigQuery to Explore and Analyze Data
   
 **Resource**
   BigQuery
